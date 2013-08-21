@@ -13,7 +13,7 @@ class heat::api-cfn (
   $bind_host         = '0.0.0.0',
   $bind_port         = '8000',
   $verbose           = false,
-  $debug             = false,
+  $debug             = false
 ) {
 
   include heat::params

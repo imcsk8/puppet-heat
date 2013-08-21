@@ -61,7 +61,7 @@ class heat(
   $qpid_reconnect_limit = 0,
   $qpid_reconnect_interval_min = 0,
   $qpid_reconnect_interval_max = 0,
-  $qpid_reconnect_interval = 0,
+  $qpid_reconnect_interval = 0
 ) {
 
   include heat::params

@@ -13,7 +13,7 @@ class heat::api-cloudwatch (
   $bind_host         = '0.0.0.0',
   $bind_port         = '8003',
   $verbose           = false,
-  $debug             = false,
+  $debug             = false
 ) {
 
   include heat::params
