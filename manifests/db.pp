@@ -49,7 +49,7 @@ class heat::db (
   exec { 'heat-dbsync':
     command     => $::heat::params::dbsync_command,
     path        => '/usr/bin',
-    user        => 'root',
+    user        => 'heat',
     refreshonly => true,
     logoutput   => on_failure,
     subscribe   => Heat_config['DEFAULT/sql_connection']
