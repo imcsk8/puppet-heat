@@ -36,6 +36,7 @@ class heat::engine (
                     Package['heat-common'],
         Package['heat-engine'],
         Class['heat::db']],
+    subscribe  =>Exec['heat-dbsync'],
   }
 
   exec {'heat-encryption-key-replacement':

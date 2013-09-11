@@ -43,4 +43,16 @@ class heat::db (
   heat_config {
     'DEFAULT/sql_connection': value => $sql_connection;
   }
+
+  Heat_config['DEFAULT/sql_connection'] ~> Exec['heat-dbsync']
+
+  exec { 'heat-dbsync':
+    command     => $::heat::params::dbsync_command,
+    path        => '/usr/bin',
+    user        => 'root',
+    refreshonly => true,
+    logoutput   => on_failure,
+    subscribe   => Heat_config['DEFAULT/sql_connection']
+  }
+
 }

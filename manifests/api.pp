@@ -34,6 +34,7 @@ class heat::api (
     require    => [Package['heat-common'],
     Package['heat-api'],
     Class['heat::db']],
+    subscribe  => Exec['heat-dbsync'],
   }
 
   heat_config {

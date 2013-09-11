@@ -33,6 +33,7 @@ class heat::api_cloudwatch (
     hasstatus  => true,
     hasrestart => true,
     require    => Class['heat::db'],
+    subscribe  => Exec['heat-dbsync'],
   }
 
   heat_config {
